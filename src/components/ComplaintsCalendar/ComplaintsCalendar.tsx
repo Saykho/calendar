@@ -29,5 +29,6 @@ export const ComplaintsCalendar: React.FC = () => {
                 </Space>
             </Row>
         )}
+        onSelect={setDate}
     />
 }
