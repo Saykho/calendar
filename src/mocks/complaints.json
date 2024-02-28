@@ -29,5 +29,35 @@
     "id": 6,
     "description": "Жалоба 6",
     "dateCreation": "04/03/2024"
+  },
+  {
+    "id": 7,
+    "description": "Жалоба 7",
+    "dateCreation": "04/03/2024"
+  },
+  {
+    "id": 8,
+    "description": "Жалоба 8",
+    "dateCreation": "04/03/2024"
+  },
+  {
+    "id": 9,
+    "description": "Жалоба 6",
+    "dateCreation": "04/03/2024"
+  },
+  {
+    "id": 10,
+    "description": "Жалоба 10",
+    "dateCreation": "04/03//2024"
+  },
+  {
+    "id": 11,
+    "description": "Жалоба 6",
+    "dateCreation": "04/03/2024"
+  },
+  {
+    "id": 12,
+    "description": "Жалоба 6",
+    "dateCreation": "04/03/2024"
   }
 ]

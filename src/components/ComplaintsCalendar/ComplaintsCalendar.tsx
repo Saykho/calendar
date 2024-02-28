@@ -5,6 +5,7 @@ import { getComplaintsRequestAction } from "../../store/actions";
 import { getComplaintsSelector } from "../../store/reducers";
 import dayjs, { Dayjs } from "dayjs";
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
+import { ComplaintCalendarCell } from "../ComplaintCalendarCell";
 
 export const ComplaintsCalendar: React.FC = () => {
     const dispatch = useDispatch();
@@ -14,27 +15,13 @@ export const ComplaintsCalendar: React.FC = () => {
 
     useEffect(() => {
         dispatch(getComplaintsRequestAction())
-    }, [])
-
-    const dataCellRender = (value: Dayjs) => {
-        const formattedDate = value.format("DD/MM/YYYY");
-        const complaintsForDate = complaints.filter(({dateCreation}) => dateCreation === formattedDate);
-        return (
-            <ul className="complaints">
-                {complaintsForDate.map((complaint) => (
-                    <li key={complaint.id}>
-                        <Badge status="success" text={complaint.description} />
-                    </li>
-                ))}
-            </ul>
-        )
-    }
+    }, []);
 
     return <Calendar
-        cellRender={dataCellRender}
+        cellRender={ComplaintCalendarCell(complaints)}
         value={date}
         headerRender={() => (
-            <Row justify="space-between" className="p-1">
+            <Row justify="space-between">
                 <Typography.Title level={3}>{monthName}</Typography.Title>
                 <Space>
                     <Button shape="circle" onClick={() => setDate(date.add(-1, 'months'))} icon={<LeftOutlined />} />
