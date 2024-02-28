@@ -1,10 +1,12 @@
 import React from 'react';
-import './App.css';
 import { ComplaintsCalendar } from "./components";
+import styles from "./App.module.scss";
 
 function App() {
   return (
-    <ComplaintsCalendar />
+      <div className={styles.app}>
+        <ComplaintsCalendar />
+      </div>
   );
 }
 
