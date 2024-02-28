@@ -1,13 +1,16 @@
-import React, { useEffect } from "react";
-import { Badge, Calendar, Typography } from "antd";
+import React, { useEffect, useState } from "react";
+import { Badge, Button, Calendar, Row, Space, Typography } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import { getComplaintsRequestAction } from "../../store/actions";
 import { getComplaintsSelector } from "../../store/reducers";
-import { Dayjs } from "dayjs";
+import dayjs, { Dayjs } from "dayjs";
+import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 
 export const ComplaintsCalendar: React.FC = () => {
     const dispatch = useDispatch();
     const complaints = useSelector(getComplaintsSelector);
+    const [date, setDate] = useState(dayjs());
+    const monthName = date.locale('ru').format("MMMM");
 
     useEffect(() => {
         dispatch(getComplaintsRequestAction())
@@ -27,5 +30,17 @@ export const ComplaintsCalendar: React.FC = () => {
         )
     }
 
-    return <Calendar cellRender={dataCellRender} />
+    return <Calendar
+        cellRender={dataCellRender}
+        value={date}
+        headerRender={() => (
+            <Row justify="space-between" className="p-1">
+                <Typography.Title level={3}>{monthName}</Typography.Title>
+                <Space>
+                    <Button shape="circle" onClick={() => setDate(date.add(-1, 'months'))} icon={<LeftOutlined />} />
+                    <Button shape="circle" onClick={() => setDate(date.add(1, 'months'))} icon={<RightOutlined />} />
+                </Space>
+            </Row>
+        )}
+    />
 }
