@@ -1,0 +1,33 @@
+[
+  {
+    "id": 1,
+    "description": "Жалоба 1",
+    "dateCreation": "01/03/2024"
+  },
+  {
+    "id": 2,
+    "description": "Жалоба 2",
+    "dateCreation": "02/03/2024"
+  },
+  {
+    "id": 3,
+    "description": "Жалоба 3",
+    "dateCreation": "03/03/2024"
+  },
+  {
+    "id": 4,
+    "description": "Жалоба 4",
+    "dateCreation": "04/03/2024"
+  },
+
+  {
+    "id": 5,
+    "description": "Жалоба 5",
+    "dateCreation": "05/03/2024"
+  },
+  {
+    "id": 6,
+    "description": "Жалоба 6",
+    "dateCreation": "04/03/2024"
+  }
+]
