@@ -37,26 +37,6 @@
     }
   }
 
-  .calendarHeader {
-    border-bottom: 1px solid #e9eefc;
-    padding: 0 20px 20px 20px;
-  }
-
-  .headerButtons {
-    background: #e2e9fc;
-    padding: 0 2px;
-    border-radius: 20px;
-    height: 34px;
-  }
-
-  .prevButton {
-    margin-right: 20px;
-  }
-
-  .buttonIcon {
-    color: #0364b1;
-  }
-
   table thead tr th {
     color: #b3b3c6 !important;
     font-size: 16px !important;
@@ -74,7 +54,27 @@
   }
 }
 
+.calendarHeader {
+  border-bottom: 1px solid #e9eefc;
+  padding: 0 40px 20px 40px;
+}
+
 .monthName {
   text-transform: capitalize;
   margin-bottom: 0 !important;
+}
+
+.headerButtons {
+  background: #e2e9fc;
+  padding: 0 2px;
+  border-radius: 20px;
+  height: 34px;
+}
+
+.prevButton {
+  margin-right: 20px;
+}
+
+.buttonIcon {
+  color: #0364b1;
 }

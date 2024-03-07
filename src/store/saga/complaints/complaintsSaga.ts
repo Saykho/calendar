@@ -3,5 +3,5 @@ import { getComplaintsRequestAction } from "../../actions";
 import { getComplaintsSaga } from "./getComplaintsSaga";
 
 export function* watchComplaintsSaga() {
-    yield takeEvery(getComplaintsRequestAction, getComplaintsSaga);
+  yield takeEvery(getComplaintsRequestAction, getComplaintsSaga);
 }
