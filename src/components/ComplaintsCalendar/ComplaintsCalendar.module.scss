@@ -1,3 +1,80 @@
-.complaints {
+.calendar {
+  padding: 20px 0;
+  border-radius: 20px;
 
+  :global {
+    .ant-picker-calendar-date {
+      border: 1px solid #e9eefc !important;
+      margin: 0 !important;
+    }
+
+    .ant-picker-cell-selected .ant-picker-calendar-date {
+      border-radius: 20px !important;
+      background: #0167b3 !important;
+    }
+
+    .hidden-complaints {
+      .text, .show-icon {
+        display: none;
+      }
+    }
+
+    .ant-picker-cell-selected .hidden-complaints {
+      .text, .show-icon {
+        display: inline-block;
+      }
+    }
+
+    .ant-picker-cell-selected .ant-picker-calendar-date-value,
+    .ant-picker-cell-selected .ant-picker-calendar-date-content,
+    .ant-picker-cell-selected .ant-picker-calendar-date-content .complaints li span {
+      color: white !important;
+    }
+
+    .ant-picker-calendar-date-content {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  }
+
+  .calendarHeader {
+    border-bottom: 1px solid #e9eefc;
+    padding: 0 20px 20px 20px;
+  }
+
+  .headerButtons {
+    background: #e2e9fc;
+    padding: 0 2px;
+    border-radius: 20px;
+    height: 34px;
+  }
+
+  .prevButton {
+    margin-right: 20px;
+  }
+
+  .buttonIcon {
+    color: #0364b1;
+  }
+
+  table thead tr th {
+    color: #b3b3c6 !important;
+    font-size: 16px !important;
+    padding: 2px 0 10px 0 !important;
+    text-align: center;
+  }
+
+  table tbody tr td {
+    color: #c5d2ed !important;
+    font-size: 16px !important;
+  }
+
+  table tbody tr:last-child td *{
+    border-bottom: 0 !important;
+  }
+}
+
+.monthName {
+  text-transform: capitalize;
+  margin-bottom: 0 !important;
 }

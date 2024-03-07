@@ -1,10 +1,11 @@
 import { Complaint } from "../../models";
 import dayjs, { Dayjs } from "dayjs";
-import { Badge } from "antd";
+import { Badge, Flex } from "antd";
 import React, { useEffect, useMemo, useState } from "react";
 import styles from "./ComplaintCalendarCell.module.scss";
+import { RiseOutlined } from "@ant-design/icons";
 
-const MaxComplaintsLength = 5;
+const MaxComplaintsLength = 2;
 
 const Component: React.FC<{ cellDate: Dayjs, complaints: Complaint[] }> = ({cellDate, complaints}) => {
     const complaintsForDate = useMemo(() => complaints.filter(({dateCreation}) => {
@@ -31,18 +32,16 @@ const Component: React.FC<{ cellDate: Dayjs, complaints: Complaint[] }> = ({cell
     }
 
     if (isHideMode) {
-        return <div>
-            <p>{complaintsForDate.length} жалоб</p>
-            <p className={styles.showAll} onClick={() => {
+        return <Flex justify="space-between" align="center" className={`${styles.hiddenComplaints} hidden-complaints`}>
+            <div className={styles.complaintsLength}>{complaintsForDate.length} <span className={`${styles.text} text`}>жалоб</span></div>
+            <RiseOutlined className={`${styles.showAll} show-icon`} onClick={() => {
                 setIsHideMode(false);
-            }}>
-                Показать все..
-            </p>
-        </div>;
+            }} />
+        </Flex>;
     }
 
     return (
-        <ul className="complaints">
+        <ul className={`${styles.complaints} complaints`}>
             {complaintsForDate.map((complaint) => (
                 <li key={complaint.id}>
                     <Badge status="success" text={complaint.description}/>
